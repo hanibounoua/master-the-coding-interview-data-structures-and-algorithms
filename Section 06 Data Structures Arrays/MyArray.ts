@@ -40,6 +40,14 @@ class MyArray {
         
         return item;
     }
+
+    insert(item: any, index: number): void {
+        for (let i: number = this.length; i > index; i--) {
+            this.data[i] = this.data[i - 1];
+        }
+        this.data[index] = item;
+        this.length++;
+    }
 }
 
 let myArray = new MyArray();
@@ -57,4 +65,6 @@ console.log(myArray.get(0));
 console.log(myArray.pop());
 console.log(myArray);
 console.log(myArray.delete(2));
+console.log(myArray);
+console.log(myArray.insert('!!!! ', 2));
 console.log(myArray);
